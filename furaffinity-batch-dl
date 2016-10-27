@@ -2,8 +2,9 @@
 COOKIES_FILE='cookies.txt'
 TIMESTAMP=$(date +'%Y-%m-%d-%H:%M:%S')
 
+mkdir ./snapshot-$TIMESTAMP
+
 while read username; do #collects scraps and galleries in separate directories under the same parent
-	mkdir ./snapshot-$TIMESTAMP
 	cd    ./snapshot-$TIMESTAMP
 
 	mkdir ./$username
