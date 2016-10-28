@@ -90,3 +90,11 @@ https://github.com/Shnatsel/furaffinity-dl/issues" >&2
     page_counter=$((page_counter + 1))
     url="$base_url"/"$page_counter"
 done
+
+#fix file extensions for .jpg images incorrectly suffixed with .png
+for file in *.png
+do
+	if [[ $(file -b $file) =~ JPEG ]]; then
+		mv "$file" "${file/.png/.jpg}"
+	fi
+done

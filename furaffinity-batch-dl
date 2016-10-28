@@ -13,13 +13,13 @@ while read username; do #collects scraps and galleries in separate directories u
 	mkdir ./gallery
 	cd    ./gallery
 	
-	sh ../../../furaffinity-dl.sh gallery/$username ../../../$COOKIES_FILE
+	../../../furaffinity-dl gallery/$username ../../../$COOKIES_FILE
 	
 	cd    ..
 	mkdir ./scraps
 	cd    ./scraps
 	
-	sh ../../../furaffinity-dl.sh scraps/$username ../../../$COOKIES_FILE
+	../../../furaffinity-dl scraps/$username ../../../$COOKIES_FILE
 	
 	cd ../../..
 done <usernames.txt
